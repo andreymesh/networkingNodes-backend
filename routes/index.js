@@ -31,15 +31,15 @@ router.get("/:id", function (req, res) {
 
 router.post("/", function (req, res) {
 	const body = req.body
-	models.NetworkNodes.create({ ...body }).then(function (networkNodes) {
-		res.json(networkNodes)
+	models.NetworkNodes.create({ ...body }).then(function (response) {
+		res.json({success: !!response})
 	})
 })
 
 router.put("/:id", function (req, res) {
 	const body = req.body
-	models.NetworkNodes.update(body, { where: { id: req.params.id }, returning: true }).then(function (networkNodes) {
-		res.json(networkNodes)
+	models.NetworkNodes.update(body, { where: { id: req.params.id }, returning: true }).then(function (response) {
+		res.json({success: !!response})
 	})
 })
 
@@ -48,8 +48,8 @@ router.delete("/:id", function (req, res) {
 		where: {
 			id: req.params.id
 		}
-	}).then(function (networkNodes) {
-		res.json(networkNodes)
+	}).then(function (response) {
+		res.json({success: !!response})
 	})
 })
 
