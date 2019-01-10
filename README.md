@@ -6,7 +6,7 @@
 * В корневой папке проекта создать файл с расширением **.env** :
 ```sh
 PORT = 3001
-DATABASE_URL = postgres://user:password@example.com:5432/dbname
+DATABASE_URL = postgres://user:password@example.com:5432/dbname (данные ввести для своего сервера PostgreSQL)
 ```
 * После выполнить в терминале следующие команды:
 ```sh
